@@ -1,5 +1,5 @@
 # Bachelorarbeit Hochschule Emden/Leer
-## Froschungsfrage: **Untersuchung dreier Verfahren zur Darstellung von Panoramabildern mit visuell optimierter Tiefenwahrnehmung und ihren Grenzen**
+## Forschungsfrage: **Untersuchung dreier Verfahren zur Darstellung von Panoramabildern mit visuell optimierter Tiefenwahrnehmung und ihren Grenzen**
 
 Dieses Repository enthält die Materialien, Quellcodes und Ergebnisse zur Bachelorarbeit  
 
