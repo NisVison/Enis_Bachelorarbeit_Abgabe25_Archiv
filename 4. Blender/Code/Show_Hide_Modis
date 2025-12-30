@@ -1,0 +1,10 @@
+# Code macht bestimmte modifier an oder aus.
+import bpy
+
+modi_types = {"SUBSURF", "SOLIDIFY", "BEVEL", "ARRAY", "REMESH", "BOOLEAN"}
+
+for obj in bpy.context.selected_objects:    #für alle Selektierten Objekte
+    for mod in obj.modifiers:               #für alle 
+        if mod.type in modi_types:          #ist ein Modi aktiv?
+            mod.show_viewport = not mod.show_viewport # Not kehrt den wert (True or Fals) um in den fall
+            print(f"Toggle {mod.name} ({'on' if mod.show_viewport else 'off'}) bei {obj.name}") 

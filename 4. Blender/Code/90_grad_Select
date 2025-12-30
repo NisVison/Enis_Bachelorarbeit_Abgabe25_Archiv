@@ -1,0 +1,23 @@
+import bpy, bmesh, math
+
+tol = math.radians(90.0)
+target = math.radians(90.0)
+
+obj = bpy.context.edit_object
+if not obj or obj.type != 'MESH':
+    raise RuntimeError("Wechsle in den Edit Mode eines Meshes.")
+
+me = obj.data
+bm = bmesh.from_edit_mesh(me)
+bm.faces.ensure_lookup_table()
+bm.edges.ensure_lookup_table()
+bm.normal_update()
+
+for e in bm.edges:
+    if len(e.link_faces) == 2:
+        a = e.calc_face_angle()
+        if a is not None and abs(a - target) <= tol:
+            e.select = True
+
+bmesh.update_edit_mesh(me, loop_triangles=False, destructive=False)
+bpy.ops.mesh.select_mode(type='EDGE')

@@ -1,0 +1,21 @@
+import bpy
+
+# Gehe durch alle Materialien
+for mat in bpy.data.materials:
+    # Prüfe, ob das Material Nodes verwendet (Shader-Tree aktiviert)
+    if mat.use_nodes and mat.node_tree:
+        # Sammle Nodes zum Entfernen (um Fehler beim Iterieren zu vermeiden)
+        nodes_to_remove = []
+        
+        # Gehe durch alle Nodes im Material
+        for node in mat.node_tree.nodes:
+            # Wenn es ein Displacement-Node ist, markiere ihn zum Entfernen
+            if node.type == 'DISPLACEMENT':
+                nodes_to_remove.append(node)
+        
+        # Entferne die markierten Nodes
+        for node in nodes_to_remove:
+            mat.node_tree.nodes.remove(node)
+            print(f"Removed Displacement Node from material: {mat.name}")
+
+print("Alle Displacement-Nodes wurden entfernt!")

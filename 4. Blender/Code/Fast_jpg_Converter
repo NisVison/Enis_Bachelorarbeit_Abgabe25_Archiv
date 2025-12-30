@@ -1,0 +1,35 @@
+import bpy
+import os
+
+#for img in bpy.data.images:
+    # Nur echte Dateien, keine Generated/Render/Compositor-Images
+    if not img.source == 'FILE':
+        continue
+
+    # Wenn Bild gerade nicht geladen ist: versuchen nachzuladen
+    if not img.has_data:
+        try:
+            img.reload()
+        except:
+            print(f"Skip (cannot reload): {img.name}")
+            continue
+
+    # Absoluten Pfad holen
+    abs_path = bpy.path.abspath(img.filepath_raw)
+    if not abs_path:
+        print(f"Skip (no filepath): {img.name}")
+        continue
+
+    folder, filename = os.path.split(abs_path)
+    base, ext = os.path.splitext(filename)
+
+    # Neuen Pfad als JPG
+    new_path = os.path.join(folder, base + ".jpg")
+
+    # Dateiformat auf JPG setzen
+    img.file_format = 'JPEG'
+    img.filepath_raw = new_path
+
+    # Speichern
+    img.save()
+    print(f"Saved: {new_path}")
