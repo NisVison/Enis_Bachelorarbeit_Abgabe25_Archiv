@@ -1,5 +1,5 @@
 # Bachelorarbeit Hochschule Emden/Leer
-## Froschungsfrage: **Untersuchung dreier Verfahren zur Darstellung von Panoramabildern mit visuell optimierter Tiefenwahrnehmung und ihren Grenzen**
+## Forschungsfrage: **Untersuchung dreier Verfahren zur Darstellung von Panoramabildern mit visuell optimierter Tiefenwahrnehmung und ihren Grenzen**
 
 Dieses Repository enthält die Materialien, Quellcodes und Ergebnisse zur Bachelorarbeit  
 
@@ -40,8 +40,8 @@ Die Szenarien wurden in einer explorativen Online-Studie hinsichtlich subjektive
 **S3 Low Poly Rekonstruktion:** https://playground.babylonjs.com/#OF31EP#21
 
 ---
-##Academic Cloud
+## Academic Cloud
 
 Hier werden Alle workfiles hochgeladen, die zu groß sind für das GitHub Repo.
 
-Link zum Acadamic Cloud: 
+Link zum Acadamic Cloud: https://sync.academiccloud.de/index.php/s/XoxvDBu8LWw8j3l
